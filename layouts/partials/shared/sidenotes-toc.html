@@ -1,0 +1,2 @@
+{{ $featuresJs := resources.Get "js/features.js" | js.Build "features.js" }}
+<script async src="{{ $featuresJs.RelPermalink }}" type="text/javascript"></script>

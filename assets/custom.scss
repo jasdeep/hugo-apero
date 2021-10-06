@@ -1,1 +1,105 @@
-// Override this file to add your own SCSS styling.
+/* left/right elements*/
+.side {
+  width: 200px;
+  margin: 0 auto;
+}
+.side > :first-child { margin-top: 0; }
+.side > :last-child { margin-bottom: 0; }
+.side-left {
+  float: left;
+  clear: left;
+  margin-left: calc(-200px - 2em);
+  position: sticky;
+}
+.side-right {
+  float: right;
+  clear: right;
+  margin-right: calc(-200px - 2em);
+}
+h3.side-left { text-align: right; }
+.quote-left, .quote-right { width: 45%; }
+.embed-left, .embed-right {
+  margin-top: auto;
+  padding: 0;
+}
+.quote-left, .embed-left {
+  float: left;
+  margin-right: 1em;
+}
+.quote-right, .embed-right {
+  float: right;
+  margin-left: 1em;
+}
+.embed-left { margin-left: calc(-200px - 2em); }
+.embed-right { margin-right: calc(-200px - 2em); }
+.side-left, .embed-left, #TOC { position: sticky; }
+
+.spacer { width: 1em; }
+.spacer-left { border-left: 1px dashed; }
+.spacer-right { border-right: 1px dashed; }
+
+.bg-number {
+ text-decoration: none;
+ padding: 5px;
+ border-radius: 5px;
+}
+
+
+/* custom fonts*/
+
+@font-face {
+  font-family: 'Mukta Mahee';
+  font-style: normal;
+  font-weight: 200;
+  src: local(''),
+       url('../fonts/MuktaMahee-ExtraLight.woff2') format('woff2'),
+       url('../fonts/MuktaMahee-ExtraLight.woff2') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Mukta Mahee';
+  font-style: normal;
+  font-weight: 300;
+  src: local(''),
+       url('../fonts/MuktaMahee-Light.woff2') format('woff2'),
+       url('../fonts/MuktaMahee-Light.woff2') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Mukta Mahee';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/MuktaMahee-Regular.woff2') format('woff2'),
+       url('../fonts/MuktaMahee-Regular.woff2') format('woff');
+}
+
+@font-face {
+  font-family: 'Mukta Mahee';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('../fonts/MuktaMahee-Medium.woff2') format('woff2'),
+       url('../fonts/MuktaMahee-Medium.woff2') format('woff');
+}
+
+@font-face {
+  font-family: 'Mukta Mahee';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''),
+       url('../fonts/MuktaMahee-SemiBold.woff2') format('woff2'),
+       url('../fonts/MuktaMahee-SemiBold.woff2') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Mukta Mahee';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('../fonts/MuktaMahee-Bold.woff2') format('woff2'),
+       url('../fonts/MuktaMahee-Bold.woff2') format('woff');
+}
