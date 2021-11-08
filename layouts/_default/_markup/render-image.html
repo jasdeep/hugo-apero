@@ -1,4 +1,17 @@
 <figure>
-  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}">
+  {{ $url := safeURL .Destination }}
+  {{ $image_ext := path.Ext $url }}
+  <source srcset="{{ $url }}" type='image/{{replace $image_ext "." ""}}'>
+  {{ if or (eq $image_ext ".png") (eq $image_ext ".jpg") }}
+  {{ $webpDestination := strings.Replace .Destination $image_ext ".webp" }}
+  {{ if (fileExists ( printf "/static%s" $webpDestination )) }}
+  <source srcset="{{$webpDestination | safeURL }}" type="image/webp">
+  {{ end }}
+  {{ $avifDestination := strings.Replace .Destination $image_ext ".avif" }}
+  {{ if (fileExists ( printf "/static%s" $avifDestination )) }}
+  <source srcset="{{$avifDestination | safeURL }}" type="image/avif">
+  {{ end }}
+  {{ end }}
+  <img loading="lazy" src="{{ $url }}" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
   <figcaption><em>{{ .Title }}</em></figcaption>
 </figure>
